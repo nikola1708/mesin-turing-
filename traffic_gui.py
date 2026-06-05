@@ -51,17 +51,22 @@ class TrafficGUI:
         self.root.after(0, self._update_light)
 
     def _update_light(self) -> None:
-        """Refresh the GUI to reflect the current state and schedule the next step."""
+        """Refresh the GUI to reflect the current state and schedule the next step.
+        The duration depends on the colour that is currently active.
+        """
         # Determine which colour should be active.
         active_colour = self.tm.current_color()
         # Update fills.
         for colour, item_id in self.light_items.items():
             fill = colour if colour == active_colour else "#4f4f4f"
             self.canvas.itemconfig(item_id, fill=fill)
+        # Define per‑state durations in milliseconds.
+        duration_map = {"red": 4000, "yellow": 1000, "green": 4000}
         # Advance the Turing machine for the next cycle.
         self.tm.step()
-        # Schedule next update.
-        self.root.after(self.interval_ms, self._update_light)
+        # Schedule next update using the duration of the colour we just displayed.
+        next_interval = duration_map.get(active_colour, 1000)
+        self.root.after(next_interval, self._update_light)
 
     def run(self) -> None:
         """Enter the tkinter main loop."""

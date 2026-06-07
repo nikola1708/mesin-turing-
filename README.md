@@ -51,26 +51,3 @@ python -m turing_machine
 ```
 You should see a printed sequence of states and colours.
 
----
-## 📂 Project Structure
-```
-traffic_light_turing/
-├─ turing_machine.py   # Turing‑machine definition & logic
-├─ traffic_gui.py      # Tkinter GUI that drives the machine
-├─ run.py              # Simple launcher script
-└─ README.md           # You are reading it!
-```
-
----
-## 🎨 Design Notes
-- Dark background (`#2b2b2b`) with subtle outlines for a premium look.
-- Simple coloured circles keep the UI lightweight while still being visually clear.
-- All code lives in the standard library – run anywhere Python is available.
-
----
-## ✅ Checklist (for developers)
-- [ ] Verify the GUI cycles through Red → Yellow → Green without errors.
-- [ ] Add unit tests for `TuringMachine.step()` if needed.
-- [ ] Optionally package the project for distribution.
-
-Enjoy exploring how fundamental computation models can power everyday systems! 

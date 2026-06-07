@@ -5,7 +5,7 @@ Run with:
     python run.py
 """
 
-from traffic_gui import TrafficGUI
+from main.traffic_gui import TrafficGUI
 
 if __name__ == "__main__":
     gui = TrafficGUI()

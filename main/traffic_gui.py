@@ -12,7 +12,7 @@ from typing import Dict
 
 # Local import – the path will be resolved because both modules are in the same
 # project directory.
-from turing_machine import TuringMachine
+from logic.turing_machine import TuringMachine
 
 
 class TrafficGUI:
